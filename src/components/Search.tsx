@@ -1,5 +1,5 @@
 "use client";
-import { scrapeOlxProducts } from "@/actions/scrape-product";
+import { scrapeOlxProducts } from "@/actions/scrape-products";
 import useStore from "@/hooks/olx-products";
 import { useState } from "react"
 

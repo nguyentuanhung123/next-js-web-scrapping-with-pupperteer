@@ -1,3 +1,4 @@
+import Products from "@/components/Products";
 import Searchbar from "@/components/Search";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <div className="w-full mb-8">
         <Searchbar />
       </div>
+      <Products />
     </main>
   );
 }
