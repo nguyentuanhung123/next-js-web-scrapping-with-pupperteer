@@ -1,5 +1,5 @@
 "use client";
-import { scrapeOlxProducts } from "@/actions/scrape-products";
+import { scrapeOlxProducts, exportData } from "@/actions/scrape-products";
 import useStore from "@/hooks/olx-products";
 import { useState } from "react"
 
@@ -30,6 +30,16 @@ const Searchbar = () => {
         }
     }
 
+    const exportProducts = async() => {
+        try{
+            await exportData(products);
+            alert("exported.")
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div className="flex flex-col lg:flex-row w-full gap-3">
             <input 
@@ -54,7 +64,7 @@ const Searchbar = () => {
                     isLoading là true (đang trong trạng thái tải dữ liệu). 
                 */}
                 <button 
-                    onClick={handleSubmit}
+                    onClick={exportProducts }
                     disabled={!products.length || isLoading}
                     className={`${products.length && !isLoading ? "cursor-pointer" : ""} bg-gray-800 disabled:bg-gray-400 rounded-md shadow-xl px-5 py-3 text-white`}
                 >

@@ -28,6 +28,23 @@ const Products = () => {
                                                 🔗
                                             </a>
                                         </div>
+                                        <p className="text-md font-medium text-gray-500">
+                                            {product?.price}
+                                        </p>
+                                        <p className="text-sm text-gray-700 mt-2">
+                                            {product?.description}
+                                        </p>
+                                        <div className="mt-3">
+                                            <div className="flex flex-row w-full gap-2 flex-wrap">
+                                                {product?.features?.map(
+                                                    (feature: any, index: number) => (
+                                                        <span key={index} className="p-2 bg-blue-700 rounded-lg text-white inline-block">
+                                                            { feature }
+                                                        </span>
+                                                    )
+                                                )}
+                                            </div>
+                                        </div>
                                     </div>
                                 ) : null
                             )
